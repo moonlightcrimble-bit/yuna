@@ -6,43 +6,51 @@
 <title>YUNA — Your AI Sales Agent</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f4f1fe;
-  --bg-card:#ffffff;
-  --bg-soft:#ece7fb;
-  --bg-soft2:#e2dcf7;
-  --ink:#160d33;
-  --ink-2:#3d3464;
-  --ink-3:#6a5f93;
-  --line:#e0d8f5;
-  --line-2:#ebe5f8;
-  --blue:#3b5bff;
-  --violet:#8a2be2;
-  --violet-2:#a855f7;
-  --grad:linear-gradient(115deg,#3b5bff 0%,#7c3aed 55%,#a855f7 100%);
-  --grad-soft:linear-gradient(115deg,rgba(59,91,255,.14),rgba(168,85,247,.14));
-  --shadow-sm:0 1px 2px rgba(16,22,48,.06),0 1px 1px rgba(16,22,48,.04);
-  --shadow-md:0 10px 28px -10px rgba(40,30,90,.20),0 3px 8px rgba(40,30,90,.07);
-  --shadow-lg:0 36px 70px -28px rgba(60,30,120,.36),0 10px 28px -14px rgba(60,30,120,.22);
+  --bg:#0a0820;
+  --bg-card:#14112e;
+  --bg-card2:#1a1640;
+  --bg-soft:#100c2a;
+  --bg-soft2:#1c1745;
+  --ink:#f3f0ff;
+  --ink-2:#c4bce8;
+  --ink-3:#8b81bd;
+  --line:#2a2452;
+  --line-2:#221d44;
+  --blue:#5b78ff;
+  --violet:#a855f7;
+  --violet-2:#c084fc;
+  --grad:linear-gradient(115deg,#5b78ff 0%,#9333ea 55%,#c026d3 100%);
+  --grad-soft:linear-gradient(115deg,rgba(91,120,255,.22),rgba(192,38,211,.22));
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4),0 0 0 1px rgba(120,80,220,.06);
+  --shadow-md:0 14px 34px -12px rgba(0,0,0,.6),0 0 0 1px rgba(120,80,220,.08);
+  --shadow-lg:0 40px 80px -30px rgba(0,0,0,.7),0 0 40px -10px rgba(150,60,240,.25);
   --r:14px;
   --maxw:1180px;
+  --pixel:'Press Start 2P',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-family:var(--pixel);
+  font-size:11px;
   background:var(--bg);
-  background-image:radial-gradient(1200px 600px at 80% -5%,rgba(168,85,247,.16),transparent 55%),radial-gradient(1000px 500px at 0% 8%,rgba(59,91,255,.12),transparent 50%);
+  background-image:radial-gradient(1200px 600px at 80% -5%,rgba(147,51,234,.22),transparent 55%),radial-gradient(1000px 500px at 0% 8%,rgba(59,91,255,.18),transparent 50%);
   background-attachment:fixed;
-  color:var(--ink);line-height:1.55;
-  -webkit-font-smoothing:antialiased;letter-spacing:-.011em;
+  color:var(--ink);line-height:1.9;
+  -webkit-font-smoothing:antialiased;letter-spacing:0;
+}
+/* Press Start 2P is ~2x wide; keep paragraph/detail text in a readable pixel mono */
+p,small,.msub,.pdesc,.sub,.support,.foot-brand p,.sec-head p,.pay-note,.set-toggle,.lead .li small,.up-meet .info small,.card p,.step p,.agent-row p,.doc p,.dash-top p{
+  font-family:'Inter',sans-serif;letter-spacing:-.01em;
 }
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--violet)}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--violet-2);font-family:var(--pixel);line-height:1.7}
+.pixelated{image-rendering:pixelated;image-rendering:crisp-edges}
 .gradtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
 /* buttons */
@@ -53,20 +61,20 @@ img{display:block;max-width:100%}
 .btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 20px -6px rgba(108,60,230,.55)}
 .btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 28px -8px rgba(108,60,230,.62)}
 .btn-ghost{background:var(--bg-card);color:var(--ink);border-color:var(--line)}
-.btn-ghost:hover{border-color:#cbd0e2;background:var(--bg-soft);transform:translateY(-1px)}
+.btn-ghost:hover{border-color:var(--violet);background:var(--bg-soft2);transform:translateY(-1px)}
 .btn-lg{padding:13px 24px;font-size:15.5px;border-radius:12px}
 .btn-sm{padding:8px 15px;font-size:14px}
 .btn-block{width:100%}
 
 /* nav */
 header{position:sticky;top:0;z-index:50}
-.nav{display:flex;align-items:center;height:66px;background:rgba(244,241,254,.82);
+.nav{display:flex;align-items:center;height:66px;background:rgba(10,8,32,.82);
   backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent;
   transition:border-color .3s,box-shadow .3s}
 .nav.scrolled{border-bottom-color:var(--line);box-shadow:0 1px 0 rgba(16,22,48,.02)}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18.5px;letter-spacing:-.02em}
-.brand .mark{width:30px;height:30px;border-radius:9px;background:var(--grad);display:grid;place-items:center;
-  color:#fff;font-weight:800;font-size:16px;box-shadow:0 4px 12px -3px rgba(108,60,230,.55);position:relative;overflow:hidden}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:16px;letter-spacing:.02em;font-family:var(--pixel)}
+.brand .mark{width:30px;height:30px;border-radius:5px;background:var(--grad);display:grid;place-items:center;
+  color:#fff;font-weight:800;font-size:13px;font-family:var(--pixel);box-shadow:0 0 0 2px rgba(192,38,211,.3),0 4px 12px -3px rgba(108,60,230,.55);position:relative;overflow:hidden}
 .brand .mark::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.45),transparent 60%)}
 .navlinks{display:flex;gap:26px;margin-left:34px}
 .navlinks a{font-size:14.5px;font-weight:500;color:var(--ink-2);transition:color .18s}
@@ -115,7 +123,7 @@ header{position:sticky;top:0;z-index:50}
   font-weight:500;color:var(--ink-2);cursor:pointer;width:100%;background:none;border:0;font-family:inherit;text-align:left}
 .dd-item:hover{background:var(--bg-soft);color:var(--ink)}
 .dd-item.danger{color:#e0394b}
-.dd-item.danger:hover{background:#fdeef0}
+.dd-item.danger:hover{background:rgba(224,57,75,.14)}
 .dd-item svg{color:var(--ink-3)}
 .dd-item.danger svg{color:#e0394b}
 
@@ -127,8 +135,8 @@ header{position:sticky;top:0;z-index:50}
   background:radial-gradient(circle at center,rgba(168,85,247,.20),rgba(59,91,255,.12) 40%,transparent 68%);
   filter:blur(8px);pointer-events:none;z-index:0}
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(38px,5vw,58px);line-height:1.05;font-weight:800;letter-spacing:-.03em;margin:18px 0 0}
-.hero .sub{font-size:19px;color:var(--ink-2);margin-top:20px;max-width:520px;font-weight:450}
+.hero h1{font-size:clamp(22px,3vw,34px);line-height:1.05;font-weight:800;letter-spacing:-.03em;margin:18px 0 0}
+.hero .sub{font-size:13px;color:var(--ink-2);margin-top:20px;max-width:520px;font-weight:450}
 .hero .support{font-size:15.5px;color:var(--ink-3);margin-top:14px;max-width:480px}
 .hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
 .hero-meta{display:flex;gap:22px;margin-top:30px;flex-wrap:wrap}
@@ -147,9 +155,10 @@ header{position:sticky;top:0;z-index:50}
   color:#0d9b63;background:#e8f9f0;padding:4px 10px;border-radius:999px}
 .console-bar .live i{width:6px;height:6px;border-radius:50%;background:#16c784;animation:pulse 1.6s infinite}
 @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(22,199,132,.5)}70%{opacity:.6;box-shadow:0 0 0 6px rgba(22,199,132,0)}}
-.console-stage{position:relative;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#edeafe,#f6f0ff);aspect-ratio:1/1}
-.console-stage img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
-.console-stage::after{content:"";position:absolute;inset:0;box-shadow:inset 0 -40px 60px -30px rgba(40,20,90,.22)}
+.console-stage{position:relative;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#1a1640,#241a52);aspect-ratio:1/1}
+.console-stage img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;mix-blend-mode:luminosity;opacity:.92}
+.console-stage::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(160deg,rgba(91,120,255,.35),rgba(192,38,211,.28));mix-blend-mode:color;pointer-events:none}
+.console-stage::after{content:"";position:absolute;inset:0;z-index:3;box-shadow:inset 0 -50px 70px -30px rgba(10,8,32,.7),inset 0 0 0 1px rgba(168,85,247,.15);pointer-events:none}
 .chip{position:absolute;z-index:3;background:var(--bg-card);border:1px solid var(--line);box-shadow:var(--shadow-md);
   border-radius:13px;padding:11px 13px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500}
 .chip .ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
@@ -157,21 +166,21 @@ header{position:sticky;top:0;z-index:50}
 .chip strong{font-weight:600;font-size:13.5px}
 .chip-1{top:34px;left:-26px;animation:float 7s ease-in-out infinite .6s}
 .chip-2{bottom:60px;right:-30px;animation:float 7s ease-in-out infinite 1.4s}
-.ic-blue{background:#e8edff;color:var(--blue)}.ic-violet{background:#f3e8ff;color:var(--violet)}.ic-green{background:#e8f9f0;color:#0d9b63}
+.ic-blue{background:rgba(91,120,255,.18);color:#8da4ff}.ic-violet{background:rgba(168,85,247,.18);color:var(--violet-2)}.ic-green{background:rgba(16,185,107,.16);color:#34e29b}
 
 /* ===== DASHBOARD (logged in hero) ===== */
 .dash{position:relative;z-index:1;display:none}
 .dash-top{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}
-.dash-top h1{font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:-.03em}
+.dash-top h1{font-size:clamp(16px,2.2vw,22px);font-weight:800;letter-spacing:-.03em}
 .dash-top p{color:var(--ink-3);font-size:15px;margin-top:6px}
-.dash-pill{display:inline-flex;align-items:center;gap:8px;background:#e8f9f0;color:#0d9b63;font-weight:600;
+.dash-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(16,185,107,.16);color:#34e29b;font-weight:600;
   font-size:13px;padding:8px 14px;border-radius:999px}
 .dash-pill i{width:7px;height:7px;border-radius:50%;background:#16c784;animation:pulse 1.6s infinite}
 .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:22px}
 .stat{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow-sm)}
 .stat .k{font-size:13px;color:var(--ink-3);font-weight:500;display:flex;align-items:center;gap:8px}
 .stat .k .ic{width:26px;height:26px;border-radius:8px;background:var(--grad-soft);color:var(--violet);display:grid;place-items:center}
-.stat .v{font-size:32px;font-weight:800;letter-spacing:-.03em;margin-top:12px}
+.stat .v{font-size:14px;font-weight:800;letter-spacing:-.03em;margin-top:12px}
 .stat .delta{font-size:12.5px;font-weight:600;color:#0d9b63;margin-top:4px}
 .dash-cols{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}
 .panel{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow-sm)}
@@ -183,8 +192,14 @@ header{position:sticky;top:0;z-index:50}
 .lead .li{flex:1}
 .lead .li strong{font-size:14px;font-weight:600;display:block}
 .lead .li small{font-size:12.5px;color:var(--ink-3)}
-.lead .ls{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px}
-.ls.qual{background:#e8f9f0;color:#0d9b63}.ls.out{background:#e8edff;color:var(--blue)}.ls.book{background:#f3e8ff;color:var(--violet)}
+.lead .ls{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;cursor:pointer;border:0;font-family:inherit}
+.lead .ls.add{background:rgba(168,85,247,.18);color:var(--violet-2)}
+.lead .del,.lead .edit{background:none;border:0;color:var(--ink-3);cursor:pointer;padding:5px;border-radius:7px;opacity:0;transition:.15s;flex:0 0 auto}
+.lead:hover .del,.lead:hover .edit{opacity:1}
+.lead .del:hover{background:rgba(224,57,75,.16);color:#ff6b7d}
+.lead .edit:hover{background:var(--bg-soft2);color:var(--violet-2)}
+.lead-empty{font-size:13px;color:var(--ink-3);padding:14px 0;text-align:center}
+.ls.qual{background:rgba(16,185,107,.16);color:#34e29b}.ls.out{background:rgba(91,120,255,.18);color:#8da4ff}.ls.book{background:rgba(168,85,247,.2);color:var(--violet-2)}
 .mini-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-top:8px}
 .mini-cal .dnum{font-size:11px;color:var(--ink-3);text-align:center;font-weight:600;padding-bottom:2px}
 .mini-cal .cell{aspect-ratio:1;border-radius:9px;background:var(--bg-soft);border:1px solid var(--line-2);
@@ -201,7 +216,7 @@ header{position:sticky;top:0;z-index:50}
 .panel h3 .book-btn:hover{transform:translateY(-1px);box-shadow:0 7px 16px -5px rgba(108,60,230,.6)}
 .up-meet .del{margin-left:auto;background:none;border:0;color:var(--ink-3);cursor:pointer;padding:6px;border-radius:7px;opacity:0;transition:.15s}
 .up-meet:hover .del{opacity:1}
-.up-meet .del:hover{background:#fdeef0;color:#e0394b}
+.up-meet .del:hover{background:rgba(224,57,75,.16);color:#ff6b7d}
 .up-empty{font-size:13px;color:var(--ink-3);padding:14px 0;text-align:center}
 .sch-field{margin-bottom:16px}
 .sch-field label{display:block;font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:7px}
@@ -213,13 +228,46 @@ header{position:sticky;top:0;z-index:50}
   color:var(--ink-2);background:var(--bg-card);cursor:pointer;transition:.15s}
 .time-slot:hover{border-color:var(--violet);color:var(--violet)}
 .time-slot.sel{background:var(--grad);color:#fff;border-color:transparent}
+/* settings */
+.set-section{margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid var(--line-2)}
+.set-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-family:var(--pixel);margin-bottom:14px}
+.set-plan{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.set-plan strong{font-size:14.5px;display:block}.set-plan small{font-size:12.5px;color:var(--ink-3)}
+.set-toggle{display:flex;align-items:center;justify-content:space-between;padding:10px 0;font-size:14px;color:var(--ink-2);cursor:pointer}
+.set-toggle input{position:absolute;opacity:0;width:0;height:0}
+.switch-ui{width:42px;height:24px;border-radius:999px;background:var(--line);position:relative;transition:.2s;flex:0 0 auto}
+.switch-ui::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s}
+.set-toggle input:checked + .switch-ui{background:var(--violet)}
+.set-toggle input:checked + .switch-ui::after{transform:translateX(18px)}
+/* checkout */
+.pay-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.test-badge{font-family:var(--pixel);font-size:9px;letter-spacing:.05em;color:#ffcf5c;background:rgba(255,191,46,.14);border:1px solid rgba(255,191,46,.3);padding:5px 9px;border-radius:6px}
+.pay-note{font-size:12px;color:var(--ink-3);background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:11px 13px;margin:6px 0 16px;line-height:1.5}
+.pay-note b{color:var(--ink-2)}
+.pay-success{text-align:center;padding:14px 0}
+.pay-success .check{width:64px;height:64px;border-radius:50%;background:rgba(16,185,107,.16);display:grid;place-items:center;margin:0 auto 18px}
+.pay-success h3{font-size:15px}.pay-success p{color:var(--ink-3);margin-top:8px;font-size:14px}
+/* big calendar in scheduler */
+.cal-wrap{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--bg-soft)}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.cal-nav strong{font-size:13.5px;font-weight:600}
+.cal-nav button{background:var(--bg-card2);border:1px solid var(--line);color:var(--ink-2);width:28px;height:28px;border-radius:8px;cursor:pointer;display:grid;place-items:center}
+.cal-nav button:hover{border-color:var(--violet);color:var(--violet-2)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-grid .cdow{font-size:10px;color:var(--ink-3);text-align:center;font-weight:600;padding:4px 0}
+.cal-grid .cday{aspect-ratio:1;border:0;background:none;border-radius:8px;font-size:13px;color:var(--ink-2);cursor:pointer;font-family:inherit;transition:.12s}
+.cal-grid .cday:hover:not(.empty){background:var(--bg-card2)}
+.cal-grid .cday.empty{cursor:default}
+.cal-grid .cday.past{color:var(--ink-3);opacity:.35;cursor:not-allowed}
+.cal-grid .cday.today{box-shadow:inset 0 0 0 1px var(--violet)}
+.cal-grid .cday.sel{background:var(--grad);color:#fff;font-weight:700}
 
 /* sections */
 section{position:relative}
 .sec{padding:96px 0}
 .sec-head{max-width:640px;margin:0 auto 56px;text-align:center}
-.sec-head h2{font-size:clamp(28px,3.4vw,40px);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-top:14px}
-.sec-head p{font-size:17px;color:var(--ink-2);margin-top:14px;font-weight:450}
+.sec-head h2{font-size:clamp(17px,2.3vw,24px);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-top:14px}
+.sec-head p{font-size:12px;color:var(--ink-2);margin-top:14px;font-weight:450}
 .bg-soft{background:rgba(236,231,251,.6)}
 
 /* features */
@@ -228,7 +276,7 @@ section{position:relative}
   transition:transform .22s,box-shadow .25s,border-color .2s}
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#dadfee}
 .card .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:18px;background:var(--grad-soft);color:var(--violet)}
-.card h3{font-size:17px;font-weight:600;letter-spacing:-.015em}
+.card h3{font-size:12px;font-weight:600;letter-spacing:-.015em}
 .card p{font-size:14.5px;color:var(--ink-3);margin-top:8px}
 
 /* how */
@@ -236,7 +284,7 @@ section{position:relative}
 .step{position:relative;padding-top:8px}
 .step .num{font-size:13px;font-weight:700;color:var(--violet);letter-spacing:.04em;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
 .step .num b{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--bg-card);border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:15px;box-shadow:var(--shadow-sm)}
-.step h3{font-size:18px;font-weight:600;letter-spacing:-.015em}
+.step h3{font-size:12px;font-weight:600;letter-spacing:-.015em}
 .step p{font-size:15px;color:var(--ink-3);margin-top:8px}
 .step .visual{margin-top:20px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg-card);padding:18px;min-height:128px;box-shadow:var(--shadow-sm)}
 .step-line{position:absolute;top:25px;left:16.66%;right:16.66%;height:1px;background:linear-gradient(90deg,transparent,var(--line),var(--line),transparent);z-index:-1}
@@ -259,9 +307,9 @@ section{position:relative}
 .agent-row:hover{transform:translateX(4px);box-shadow:var(--shadow-sm);border-color:#dadfee}
 .agent-row .ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex:0 0 auto;background:var(--grad-soft);color:var(--violet)}
 .agent-row h4{font-size:15.5px;font-weight:600}.agent-row p{font-size:13.5px;color:var(--ink-3)}
-.orchestra{position:relative;border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,#f7f6ff,#f1ecff);padding:40px;display:grid;place-items:center;min-height:340px;box-shadow:var(--shadow-md)}
+.orchestra{position:relative;border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,#16123a,#1e1648);padding:40px;display:grid;place-items:center;min-height:340px;box-shadow:var(--shadow-md)}
 .orb-core{width:96px;height:96px;border-radius:24px;background:var(--grad);display:grid;place-items:center;color:#fff;font-weight:800;font-size:26px;z-index:2;box-shadow:0 16px 40px -12px rgba(108,60,230,.6)}
-.orbit{position:absolute;border:1px dashed #d3d0ec;border-radius:50%}
+.orbit{position:absolute;border:1px dashed #3a3270;border-radius:50%}
 .orbit.o1{width:200px;height:200px}.orbit.o2{width:300px;height:300px}
 .node{position:absolute;width:44px;height:44px;border-radius:12px;background:var(--bg-card);border:1px solid var(--line);display:grid;place-items:center;color:var(--violet);box-shadow:var(--shadow-sm)}
 .node.n1{top:14%;left:50%;transform:translateX(-50%)}.node.n2{top:50%;right:8%;transform:translateY(-50%)}
@@ -271,12 +319,12 @@ section{position:relative}
 .case{background:var(--ink);color:#fff;border-radius:24px;padding:56px;position:relative;overflow:hidden}
 .case::before{content:"";position:absolute;top:-120px;right:-80px;width:480px;height:480px;background:radial-gradient(circle,rgba(168,85,247,.4),transparent 60%);filter:blur(10px)}
 .case-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
-.case .q{font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1.25}
+.case .q{font-size:clamp(15px,2vw,20px);font-weight:700;letter-spacing:-.02em;line-height:1.25}
 .case .who{margin-top:22px;font-size:14.5px;color:#aeb2dc;display:flex;align-items:center;gap:12px}
 .case .who .av{width:38px;height:38px;border-radius:50%;background:var(--grad)}
 .case-stats{display:grid;gap:18px}
 .case-stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 22px}
-.case-stat .big{font-size:38px;font-weight:800;letter-spacing:-.03em;background:linear-gradient(110deg,#a7b6ff,#d3a9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.case-stat .big{font-size:15px;font-weight:800;letter-spacing:-.03em;background:linear-gradient(110deg,#a7b6ff,#d3a9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .case-stat .lbl{font-size:13.5px;color:#aeb2dc;margin-top:2px}
 
 /* pricing */
@@ -287,7 +335,7 @@ section{position:relative}
 .plan.feat::before{content:"";position:absolute;inset:0;border-radius:18px;padding:1.5px;background:var(--grad);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
 .plan .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:11.5px;font-weight:600;padding:5px 13px;border-radius:999px;box-shadow:0 6px 16px -6px rgba(108,60,230,.6)}
 .plan .pname{font-size:15px;font-weight:600;color:var(--ink-2)}
-.plan .pprice{font-size:42px;font-weight:800;letter-spacing:-.03em;margin-top:14px}
+.plan .pprice{font-size:24px;font-weight:800;letter-spacing:-.03em;margin-top:14px}
 .plan .pprice span{font-size:15px;font-weight:500;color:var(--ink-3);letter-spacing:0}
 .plan .pdesc{font-size:14px;color:var(--ink-3);margin-top:6px;min-height:40px}
 .plan ul{list-style:none;margin:24px 0;display:grid;gap:12px}
@@ -309,8 +357,8 @@ section{position:relative}
 .cta-band{padding:0 0 96px}
 .cta-inner{background:linear-gradient(120deg,#150f33,#2a1660 60%,#3a1a72);border-radius:24px;padding:64px 40px;text-align:center;position:relative;overflow:hidden}
 .cta-inner::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(168,85,247,.4),transparent 55%)}
-.cta-inner h2{position:relative;color:#fff;font-size:clamp(28px,3.6vw,42px);font-weight:800;letter-spacing:-.025em}
-.cta-inner p{position:relative;color:#c6c2e8;font-size:17px;margin-top:14px}
+.cta-inner h2{position:relative;color:#fff;font-size:clamp(17px,2.4vw,25px);font-weight:800;letter-spacing:-.025em}
+.cta-inner p{position:relative;color:#c6c2e8;font-size:12px;margin-top:14px}
 .cta-inner .btn{position:relative;margin-top:30px}
 
 /* footer */
@@ -345,17 +393,18 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
 .modal .mclose{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:9px;border:0;background:var(--bg-soft);
   color:var(--ink-3);cursor:pointer;display:grid;place-items:center;transition:.2s}
 .modal .mclose:hover{background:var(--bg-soft2);color:var(--ink)}
-.modal .mmark{width:42px;height:42px;border-radius:12px;background:var(--grad);display:grid;place-items:center;color:#fff;font-weight:800;font-size:20px;margin-bottom:18px;box-shadow:0 6px 16px -4px rgba(108,60,230,.5)}
-.modal h3{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.modal .mmark{width:42px;height:42px;border-radius:12px;background:var(--grad);display:grid;place-items:center;color:#fff;font-weight:800;font-size:14px;margin-bottom:18px;box-shadow:0 6px 16px -4px rgba(108,60,230,.5)}
+.modal h3{font-size:15px;font-weight:800;letter-spacing:-.02em}
 .modal .msub{font-size:14px;color:var(--ink-3);margin-top:6px;margin-bottom:22px}
 .gbtn{width:100%;display:flex;align-items:center;justify-content:center;gap:11px;padding:12px;border-radius:11px;
   border:1px solid var(--line);background:var(--bg-card);font-family:inherit;font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;transition:.2s}
-.gbtn:hover{background:var(--bg-soft);border-color:#cbd0e2}
+.gbtn:hover{background:var(--bg-soft2);border-color:var(--violet)}
 .divider{display:flex;align-items:center;gap:12px;margin:20px 0;color:var(--ink-3);font-size:12.5px;font-weight:500}
 .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
 .field{margin-bottom:14px}
 .field label{display:block;font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:6px}
-.field input{width:100%;padding:11px 13px;border-radius:10px;border:1px solid var(--line);font-family:inherit;font-size:14.5px;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.field input{width:100%;padding:11px 13px;border-radius:10px;border:1px solid var(--line);background:var(--bg-soft);font-family:inherit;font-size:14.5px;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.field input::placeholder{color:var(--ink-3)}
 .field input:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 3px rgba(124,58,237,.12)}
 .field .err{color:#e0394b;font-size:12.5px;margin-top:5px;display:none}
 .field.invalid input{border-color:#e0394b}
@@ -368,7 +417,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
 .modal-overlay.show .g-modal{transform:none}
 .g-head{padding:24px 24px 18px;border-bottom:1px solid var(--line-2);text-align:center}
 .g-logo{display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;color:#5f6368;font-weight:500;margin-bottom:16px}
-.g-head h3{font-size:21px;font-weight:500;color:#202124;letter-spacing:-.01em}
+.g-head h3{font-size:14px;font-weight:500;color:#202124;letter-spacing:-.01em}
 .g-head p{font-size:13.5px;color:#5f6368;margin-top:4px}
 .g-head .g-app{color:var(--violet);font-weight:600}
 .g-body{padding:8px 12px 18px}
@@ -378,7 +427,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
 .g-ava{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:600;font-size:15px;flex:0 0 auto}
 .g-meta strong{display:block;font-size:14.5px;font-weight:500;color:#202124}
 .g-meta small{font-size:13px;color:#5f6368}
-.g-plus{background:#f1f3f4;color:#5f6368;font-size:22px;font-weight:400}
+.g-plus{background:#f1f3f4;color:#5f6368;font-size:15px;font-weight:400}
 .g-foot{padding:14px 24px 20px;font-size:12px;color:#5f6368;line-height:1.5;border-top:1px solid var(--line-2)}
 .g-addform{padding:14px 24px 22px}
 .g-addform input{width:100%;padding:12px 14px;border:1px solid #dadce0;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:14px;color:#202124}
@@ -448,7 +497,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
       </button>
 
       <div class="nav-right">
-        <a class="icon-link" href="https://x.com/yuna_swarms" target="_blank" rel="noopener" aria-label="X (Twitter)">
+        <a class="icon-link" href="https://x.com/yuna" target="_blank" rel="noopener" aria-label="X (Twitter)">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
 
@@ -471,7 +520,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
               <div class="meta"><strong id="ddName">Alex</strong><small id="ddEmail">alex@gmail.com</small></div>
             </div>
             <button class="dd-item" onclick="goDashboard()"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="9" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="5" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="14" y="12" width="7" height="9" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="3" y="16" width="7" height="5" rx="1.5" stroke="currentColor" stroke-width="2"/></svg>Dashboard</button>
-            <button class="dd-item"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Account settings</button>
+            <button class="dd-item" onclick="openSettings()"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Account settings</button>
             <button class="dd-item danger" onclick="logout()"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4m7 14 5-5-5-5m5 5H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Log out</button>
           </div>
         </div>
@@ -485,8 +534,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
     <a href="#how">Solutions</a>
     <a href="#pricing">Pricing</a>
     <a href="#docs">Docs</a>
-    <a id="mobCa">CA: <span id="mobCaVal">-----</span></a>
-    <a href="https://x.com/yuna_swarms" target="_blank" rel="noopener">Follow on X</a>
+    <a id="mobCa">CA: <span id="mobCaVal">So1aNaCAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxpump</span></a>
+    <a href="https://x.com/yuna" target="_blank" rel="noopener">Follow on X</a>
     <a onclick="openAuth('login')" id="mobLogin">Login</a>
     <button class="btn btn-primary" onclick="openAuth('signup')" id="mobSignup">Get Started</button>
     <button class="btn btn-ghost hidden" onclick="logout()" id="mobLogout">Log out</button>
@@ -567,13 +616,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
       </div>
       <div class="dash-cols">
         <div class="panel">
-          <h3>Recent activity <span class="tag">Live</span></h3>
-          <div style="margin-top:8px">
-            <div class="lead"><span class="la">AR</span><div class="li"><strong>Acme Robotics</strong><small>VP Sales · 312 employees</small></div><span class="ls book">Booked</span></div>
-            <div class="lead"><span class="la">NV</span><div class="li"><strong>Northvale Cloud</strong><small>Head of RevOps · 88 employees</small></div><span class="ls qual">Qualified</span></div>
-            <div class="lead"><span class="la">BW</span><div class="li"><strong>Brightwave SaaS</strong><small>Founder · 24 employees</small></div><span class="ls out">Contacted</span></div>
-            <div class="lead"><span class="la">LM</span><div class="li"><strong>Lumio Metrics</strong><small>Director of Sales · 140 employees</small></div><span class="ls qual">Qualified</span></div>
-          </div>
+          <h3>Recent activity <button class="book-btn" onclick="openActivity()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Add</button></h3>
+          <div id="activityList" style="margin-top:8px"></div>
         </div>
         <div class="panel">
           <h3>Upcoming meetings <button class="book-btn" onclick="openScheduler()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Book</button></h3>
@@ -641,7 +685,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
   <div class="wrap agents">
     <div class="reveal">
       <span class="eyebrow">Inside YUNA</span>
-      <h2 style="font-size:clamp(26px,3.2vw,36px);font-weight:800;letter-spacing:-.025em;margin-top:14px;line-height:1.12">A team of specialists, working as one</h2>
+      <h2 style="font-size:clamp(16px,2.2vw,22px);font-weight:800;letter-spacing:-.025em;margin-top:14px;line-height:1.12">A team of specialists, working as one</h2>
       <p style="font-size:16px;color:var(--ink-2);margin-top:14px;max-width:440px">YUNA coordinates focused sub-agents, each great at one job — so the whole pipeline runs smoothly and reliably.</p>
       <div class="agent-list" style="margin-top:28px">
         <div class="agent-row"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.3-4.3M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><div><h4>Lead Finder</h4><p>Sources accounts and contacts that match your criteria.</p></div></div>
@@ -700,7 +744,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m20 6-11 11-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>1 calendar integration</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m20 6-11 11-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Email support</li>
         </ul>
-        <button class="btn btn-ghost" onclick="startTrial()">Start Free Trial</button>
+        <button class="btn btn-ghost" onclick="openCheckout('Starter',3)">Start Free Trial</button>
       </div>
       <div class="plan feat reveal">
         <span class="badge">Most popular</span>
@@ -713,7 +757,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m20 6-11 11-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>CRM & calendar integrations</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m20 6-11 11-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority support</li>
         </ul>
-        <button class="btn btn-primary" onclick="startTrial()">Start Free Trial</button>
+        <button class="btn btn-primary" onclick="openCheckout('Growth',30)">Start Free Trial</button>
       </div>
       <div class="plan reveal">
         <div class="pname">Scale</div>
@@ -782,7 +826,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
     <div class="foot-bottom">
       <p>© 2026 YUNA. All rights reserved.</p>
       <div class="social">
-        <a href="https://x.com/yuna_swarms" aria-label="X (Twitter)" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://x.com/yuna" aria-label="X (Twitter)" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
       </div>
     </div>
   </div>
@@ -815,6 +859,82 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
     <div class="g-foot">
       To continue, Google will share your name and email address with YUNA. This is a simulated chooser for the demo.
     </div>
+  </div>
+</div>
+
+<!-- ACTIVITY EDITOR -->
+<div class="modal-overlay" id="actModal">
+  <div class="modal" style="max-width:420px">
+    <button class="mclose" onclick="closeActivity()" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <div class="mmark">Y</div>
+    <h3 id="actTitle">Add activity</h3>
+    <p class="msub">Track a lead your team is working.</p>
+    <div class="field"><label>Company</label><input type="text" id="actCompany" placeholder="Company name"></div>
+    <div class="field"><label>Detail</label><input type="text" id="actDetail" placeholder="e.g. VP Sales · 200 employees"></div>
+    <div class="sch-field"><label>Status</label>
+      <select id="actStatus">
+        <option value="out">Contacted</option>
+        <option value="qual">Qualified</option>
+        <option value="book">Booked</option>
+      </select>
+    </div>
+    <button class="btn btn-primary btn-block" onclick="saveActivity()" id="actSave">Add activity</button>
+  </div>
+</div>
+
+<!-- ACCOUNT SETTINGS -->
+<div class="modal-overlay" id="setModal">
+  <div class="modal" style="max-width:460px">
+    <button class="mclose" onclick="closeSettings()" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <h3 style="margin-bottom:4px">Account settings</h3>
+    <p class="msub">Manage your profile and preferences.</p>
+
+    <div class="set-section">
+      <div class="set-label">Profile</div>
+      <div class="field"><label>Full name</label><input type="text" id="setName"></div>
+      <div class="field"><label>Email</label><input type="email" id="setEmail"></div>
+      <div class="field"><label>Company</label><input type="text" id="setCompany" placeholder="Your company"></div>
+    </div>
+
+    <div class="set-section">
+      <div class="set-label">Plan</div>
+      <div class="set-plan">
+        <div><strong id="setPlanName">Free trial</strong><small id="setPlanDesc">14 days left · upgrade anytime</small></div>
+        <button class="btn btn-primary btn-sm" onclick="closeSettings();scrollToPricing()">Upgrade</button>
+      </div>
+    </div>
+
+    <div class="set-section">
+      <div class="set-label">Preferences</div>
+      <label class="set-toggle"><span>Email notifications</span><input type="checkbox" id="setNotif" checked><span class="switch-ui"></span></label>
+      <label class="set-toggle"><span>Weekly pipeline report</span><input type="checkbox" id="setReport" checked><span class="switch-ui"></span></label>
+      <label class="set-toggle"><span>YUNA auto-follow-up</span><input type="checkbox" id="setAuto"><span class="switch-ui"></span></label>
+    </div>
+
+    <button class="btn btn-primary btn-block" onclick="saveSettings()">Save changes</button>
+  </div>
+</div>
+
+<!-- CHECKOUT (Stripe-style, TEST MODE) -->
+<div class="modal-overlay" id="payModal">
+  <div class="modal" style="max-width:440px">
+    <button class="mclose" onclick="closeCheckout()" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <div class="pay-head">
+      <div class="mmark">Y</div>
+      <span class="test-badge">TEST MODE</span>
+    </div>
+    <h3 id="payPlanTitle">Subscribe to Growth</h3>
+    <p class="msub">You'll be charged <strong id="payAmount">$30</strong>/month. Cancel anytime.</p>
+
+    <div class="field"><label>Email</label><input type="email" id="payEmail" placeholder="you@gmail.com"></div>
+    <div class="field"><label>Card number</label><input type="text" id="payCard" placeholder="4242 4242 4242 4242" inputmode="numeric" maxlength="19"></div>
+    <div class="sch-row">
+      <div class="field"><label>Expiry</label><input type="text" id="payExp" placeholder="MM / YY" maxlength="7"></div>
+      <div class="field"><label>CVC</label><input type="text" id="payCvc" placeholder="123" inputmode="numeric" maxlength="4"></div>
+    </div>
+    <div class="field"><label>Name on card</label><input type="text" id="payName" placeholder="Full name"></div>
+    <div class="pay-note">🔒 Demo checkout — use test card <b>4242 4242 4242 4242</b>, any future expiry & CVC. No real charge is made.</div>
+    <button class="btn btn-primary btn-block" id="payBtn" onclick="processPayment()">Pay <span id="payBtnAmt">$30</span></button>
   </div>
 </div>
 
@@ -851,7 +971,14 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
     </div>
     <div class="sch-field">
       <label>Date</label>
-      <input type="date" id="schDate">
+      <div class="cal-wrap">
+        <div class="cal-nav">
+          <button onclick="calMove(-1)" aria-label="Previous month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <strong id="calLabel">Month</strong>
+          <button onclick="calMove(1)" aria-label="Next month"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+      </div>
     </div>
     <div class="sch-field">
       <label>Time</label>
@@ -961,7 +1088,7 @@ function startTrial(){
   if(currentUser){ goDashboard(); toast('You are already signed in'); return; }
   openAuth('signup');
 }
-function openAuth(mode){authMode=mode;renderAuthMode();modal.classList.add('show');document.body.style.overflow='hidden';mn.classList.remove('open')}
+function openAuth(mode){authMode=mode;if(!document.getElementById('authSubmit'))buildAuthForm();renderAuthMode();modal.classList.add('show');document.body.style.overflow='hidden';mn.classList.remove('open')}
 function closeAuth(){modal.classList.remove('show');document.body.style.overflow='';clearErrors()}
 modal.addEventListener('click',e=>{if(e.target===modal)closeAuth()});
 addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('show'))closeAuth()});
@@ -1000,8 +1127,8 @@ function submitAuth(){
   if(authMode==='signup'){
     if(users[email]){document.getElementById('emailErr').textContent='An account with this email already exists.';document.getElementById('fEmail').classList.add('invalid');return}
     users[email]={name,email,password:pass,provider:'email'};
-    loginSuccess(users[email]);
-    toast('Account created — welcome to YUNA!');
+    // Account is created but the user is NOT logged in automatically.
+    showSignupSuccess(email);
   }else{
     const u=users[email];
     if(!u){document.getElementById('emailErr').textContent='No account found. Try signing up.';document.getElementById('fEmail').classList.add('invalid');return}
@@ -1009,6 +1136,46 @@ function submitAuth(){
     loginSuccess(u);
     toast('Welcome back!');
   }
+}
+
+// Rebuilds the auth modal's original form markup (after a success screen replaced it).
+function buildAuthForm(){
+  const m=document.querySelector('#authModal .modal');
+  m.innerHTML=`
+    <button class="mclose" onclick="closeAuth()" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <div class="mmark">Y</div>
+    <h3 id="authTitle">Create your account</h3>
+    <p class="msub" id="authSub">Start your free trial — no credit card required.</p>
+    <button class="gbtn" onclick="googleAuth()">
+      <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l6.19 5.238C39.683 35.846 44 30.5 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+      Continue with Google
+    </button>
+    <div class="divider">or with email</div>
+    <div class="field" id="fName"><label>Full name</label><input type="text" id="inName" placeholder="Your name" autocomplete="name"><div class="err">Please enter your name.</div></div>
+    <div class="field" id="fEmail"><label>Email</label><input type="email" id="inEmail" placeholder="you@gmail.com" autocomplete="email"><div class="err" id="emailErr">Please enter a valid email.</div></div>
+    <div class="field" id="fPass"><label>Password</label><input type="password" id="inPass" placeholder="••••••••" autocomplete="current-password"><div class="err" id="passErr">Password must be at least 6 characters.</div></div>
+    <button class="btn btn-primary btn-block" id="authSubmit" onclick="submitAuth()">Create account</button>
+    <p class="switch" id="authSwitch">Already have an account? <button onclick="switchAuth()">Log in</button></p>`;
+}
+
+// Success screen after sign up — no auto login. Prompts the user to log in.
+function showSignupSuccess(email){
+  const m=document.querySelector('#authModal .modal');
+  m.innerHTML=`
+    <button class="mclose" onclick="closeAuth()" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <div class="pay-success">
+      <div class="check"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="m20 6-11 11-5-5" stroke="#34e29b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Sign up successful!</h3>
+      <p>Your account has been created for <strong>${esc(email)}</strong>. Please log in to continue.</p>
+      <button class="btn btn-primary btn-block" style="margin-top:22px" onclick="restoreAuthAndLogin('${esc(email)}')">Log in</button>
+    </div>`;
+}
+// Rebuild the auth form in login mode (pre-fill email) after the success screen.
+function restoreAuthAndLogin(email){
+  buildAuthForm();
+  openAuth('login');
+  const inEmail=document.getElementById('inEmail'); if(inEmail) inEmail.value=email;
+  const inPass=document.getElementById('inPass'); if(inPass) inPass.focus();
 }
 
 // ---- Google (Gmail) auth — realistic account chooser ----
@@ -1097,6 +1264,7 @@ function loginSuccess(u){
   document.getElementById('heroPublic').style.display='none';
   document.getElementById('heroDash').style.display='block';
   document.getElementById('dashName').textContent=u.name.split(' ')[0];
+  renderActivity();
   renderMeetings();
   animateStats();
   closeAuth();
@@ -1143,11 +1311,7 @@ function animateStats(){
    meetings live in this array; the panel + calendar render from it.
    ============================================================ */
 const DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-let meetings=[
-  {company:'Acme Robotics', type:'Discovery call · 30 min', date:isoFromOffset(2), time:'2:30'},
-  {company:'Lumio Metrics', type:'Demo · 45 min', date:isoFromOffset(3), time:'10:00'},
-  {company:'Northvale Cloud', type:'Intro call · 30 min', date:isoFromOffset(6), time:'4:15'},
-];
+let meetings=[];
 function isoFromOffset(days){const d=new Date();d.setDate(d.getDate()+days);return d.toISOString().slice(0,10);}
 function fmtDay(iso){const d=new Date(iso+'T00:00');return DOW[d.getDay()]+' '+d.getDate();}
 
@@ -1186,15 +1350,15 @@ function renderMiniCal(){
   }
 }
 
-let schTime=null;
+let schTime=null, schSelectedDate=null, calCursor=new Date();
 function openScheduler(){
   document.getElementById('userDropdown').parentElement.classList.remove('open');
-  schTime=null;
+  schTime=null; schSelectedDate=isoFromOffset(1);
   document.querySelectorAll('#schTimes .time-slot').forEach(s=>s.classList.remove('sel'));
-  document.getElementById('schDate').value=isoFromOffset(1);
-  document.getElementById('schDate').min=isoFromOffset(0);
+  calCursor=new Date();
   document.getElementById('schCustomWrap').classList.add('hidden');
   document.getElementById('schProspect').value='Acme Robotics';
+  renderCalendar();
   document.getElementById('schModal').classList.add('show');
   document.body.style.overflow='hidden';
 }
@@ -1208,15 +1372,41 @@ document.getElementById('schTimes').addEventListener('click',e=>{
   document.querySelectorAll('#schTimes .time-slot').forEach(x=>x.classList.remove('sel'));
   s.classList.add('sel'); schTime=s.textContent;
 });
+
+// ---- real, navigable month calendar ----
+const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+function calMove(dir){calCursor.setMonth(calCursor.getMonth()+dir);renderCalendar();}
+function renderCalendar(){
+  const grid=document.getElementById('calGrid'); if(!grid)return;
+  const y=calCursor.getFullYear(), m=calCursor.getMonth();
+  document.getElementById('calLabel').textContent=MONTHS[m]+' '+y;
+  const today=new Date(); today.setHours(0,0,0,0);
+  const first=new Date(y,m,1); const startDow=(first.getDay()+6)%7; // Mon=0
+  const days=new Date(y,m+1,0).getDate();
+  let html=['Mo','Tu','We','Th','Fr','Sa','Su'].map(d=>`<span class="cdow">${d}</span>`).join('');
+  for(let i=0;i<startDow;i++)html+='<button class="cday empty" disabled></button>';
+  for(let d=1;d<=days;d++){
+    const iso=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const dd=new Date(y,m,d);
+    const past=dd<today;
+    const cls=['cday'];
+    if(past)cls.push('past');
+    if(dd.getTime()===today.getTime())cls.push('today');
+    if(iso===schSelectedDate)cls.push('sel');
+    html+=`<button class="${cls.join(' ')}" ${past?'disabled':''} onclick="pickDate('${iso}')">${d}</button>`;
+  }
+  grid.innerHTML=html;
+}
+function pickDate(iso){schSelectedDate=iso;renderCalendar();}
+
 function bookMeeting(){
   const sel=document.getElementById('schProspect').value;
   const company= sel==='__custom' ? document.getElementById('schCustom').value.trim() : sel;
   const type=document.getElementById('schType').value;
-  const date=document.getElementById('schDate').value;
   if(!company){toast('Please enter a prospect name');return;}
-  if(!date){toast('Please pick a date');return;}
+  if(!schSelectedDate){toast('Please pick a date');return;}
   if(!schTime){toast('Please pick a time');return;}
-  meetings.push({company,type,date,time:schTime});
+  meetings.push({company,type,date:schSelectedDate,time:schTime});
   renderMeetings();
   closeScheduler();
   toast('Meeting booked with '+company);
@@ -1224,6 +1414,152 @@ function bookMeeting(){
 function cancelMeeting(i){
   const m=meetings[i]; meetings.splice(i,1); renderMeetings();
   toast('Cancelled meeting with '+(m?m.company:'prospect'));
+}
+
+/* ============================================================
+   RECENT ACTIVITY — editable (add / rename / change status / delete)
+   ============================================================ */
+const STATUS_LABEL={out:'Contacted',qual:'Qualified',book:'Booked'};
+const STATUS_CYCLE=['out','qual','book'];
+let activity=[];
+let actEditIndex=null;
+function leadInitials(name){return name.trim().split(/\s+/).map(w=>w[0]).slice(0,2).join('').toUpperCase()||'?';}
+function renderActivity(){
+  const list=document.getElementById('activityList'); if(!list)return;
+  if(!activity.length){list.innerHTML='<div class="lead-empty">No activity yet — add your first lead.</div>';return;}
+  list.innerHTML=activity.map((a,i)=>`
+    <div class="lead">
+      <span class="la">${leadInitials(a.company)}</span>
+      <div class="li"><strong>${esc(a.company)}</strong><small>${esc(a.detail)}</small></div>
+      <button class="ls ${a.status}" title="Click to change status" onclick="cycleStatus(${i})">${STATUS_LABEL[a.status]}</button>
+      <button class="edit" title="Edit" onclick="openActivity(${i})"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="del" title="Delete" onclick="deleteActivity(${i})"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m2 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    </div>`).join('');
+}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function cycleStatus(i){
+  const cur=STATUS_CYCLE.indexOf(activity[i].status);
+  activity[i].status=STATUS_CYCLE[(cur+1)%STATUS_CYCLE.length];
+  renderActivity(); recalcQualified();
+  toast(activity[i].company+' → '+STATUS_LABEL[activity[i].status]);
+}
+function deleteActivity(i){const a=activity.splice(i,1)[0];renderActivity();recalcQualified();toast('Removed '+a.company);}
+function openActivity(i){
+  actEditIndex = (typeof i==='number') ? i : null;
+  document.getElementById('userDropdown').parentElement.classList.remove('open');
+  const editing = actEditIndex!==null;
+  document.getElementById('actTitle').textContent=editing?'Edit activity':'Add activity';
+  document.getElementById('actSave').textContent=editing?'Save changes':'Add activity';
+  document.getElementById('actCompany').value=editing?activity[i].company:'';
+  document.getElementById('actDetail').value=editing?activity[i].detail:'';
+  document.getElementById('actStatus').value=editing?activity[i].status:'out';
+  document.getElementById('actModal').classList.add('show');document.body.style.overflow='hidden';
+}
+function closeActivity(){document.getElementById('actModal').classList.remove('show');document.body.style.overflow='';}
+document.getElementById('actModal').addEventListener('click',e=>{if(e.target.id==='actModal')closeActivity()});
+function saveActivity(){
+  const company=document.getElementById('actCompany').value.trim();
+  const detail=document.getElementById('actDetail').value.trim();
+  const status=document.getElementById('actStatus').value;
+  if(!company){toast('Please enter a company');return;}
+  if(actEditIndex!==null){activity[actEditIndex]={company,detail,status};toast('Updated '+company);}
+  else{activity.unshift({company,detail,status});toast('Added '+company);}
+  renderActivity();recalcQualified();closeActivity();
+}
+function recalcQualified(){
+  // keep the "Qualified" stat believable as activity changes
+  const base=386; const extra=activity.filter(a=>a.status!=='out').length;
+  const el=document.getElementById('stQual'); if(el) el.textContent=(base+extra).toLocaleString();
+}
+
+/* ============================================================
+   ACCOUNT SETTINGS — working
+   ============================================================ */
+function openSettings(){
+  document.getElementById('userDropdown').parentElement.classList.remove('open');
+  if(currentUser){
+    document.getElementById('setName').value=currentUser.name||'';
+    document.getElementById('setEmail').value=currentUser.email||'';
+    document.getElementById('setCompany').value=currentUser.company||'';
+    document.getElementById('setPlanName').textContent=currentUser.plan||'Free trial';
+    document.getElementById('setPlanDesc').textContent=currentUser.plan&&currentUser.plan!=='Free trial'?'Active subscription':'14 days left · upgrade anytime';
+  }
+  document.getElementById('setModal').classList.add('show');document.body.style.overflow='hidden';
+}
+function closeSettings(){document.getElementById('setModal').classList.remove('show');document.body.style.overflow='';}
+document.getElementById('setModal').addEventListener('click',e=>{if(e.target.id==='setModal')closeSettings()});
+function saveSettings(){
+  if(!currentUser){closeSettings();return;}
+  const name=document.getElementById('setName').value.trim();
+  const email=document.getElementById('setEmail').value.trim();
+  if(!name){toast('Name cannot be empty');return;}
+  currentUser.name=name; currentUser.email=email||currentUser.email;
+  currentUser.company=document.getElementById('setCompany').value.trim();
+  // reflect new name/email across the UI
+  const ini=initials(currentUser.name);
+  document.getElementById('navAvatar').textContent=ini;
+  document.getElementById('ddAvatar').textContent=ini;
+  document.getElementById('navName').textContent=currentUser.name.split(' ')[0];
+  document.getElementById('ddName').textContent=currentUser.name;
+  document.getElementById('ddEmail').textContent=currentUser.email;
+  document.getElementById('dashName').textContent=currentUser.name.split(' ')[0];
+  closeSettings(); toast('Settings saved');
+}
+function scrollToPricing(){document.getElementById('pricing').scrollIntoView({behavior:'smooth'});}
+
+/* ============================================================
+   CHECKOUT — Stripe-style, TEST MODE (no real charge)
+   For production: replace processPayment() with Stripe Checkout
+   (stripe.redirectToCheckout) backed by a server endpoint.
+   ============================================================ */
+let payPlan=null;
+function openCheckout(plan,amount){
+  if(!currentUser){openAuth('signup');return;}
+  payPlan={plan,amount};
+  document.getElementById('payPlanTitle').textContent='Subscribe to '+plan;
+  document.getElementById('payAmount').textContent='$'+amount;
+  document.getElementById('payBtnAmt').textContent='$'+amount;
+  document.getElementById('payEmail').value=currentUser.email||'';
+  document.getElementById('payCard').value='';document.getElementById('payExp').value='';
+  document.getElementById('payCvc').value='';document.getElementById('payName').value=currentUser.name||'';
+  document.getElementById('payModal').classList.add('show');document.body.style.overflow='hidden';
+}
+function closeCheckout(){document.getElementById('payModal').classList.remove('show');document.body.style.overflow='';}
+document.getElementById('payModal').addEventListener('click',e=>{if(e.target.id==='payModal')closeCheckout()});
+// card formatting
+document.getElementById('payCard').addEventListener('input',function(){
+  let v=this.value.replace(/\D/g,'').slice(0,16);
+  this.value=v.replace(/(.{4})/g,'$1 ').trim();
+});
+document.getElementById('payExp').addEventListener('input',function(){
+  let v=this.value.replace(/\D/g,'').slice(0,4);
+  this.value = v.length>=3 ? v.slice(0,2)+' / '+v.slice(2) : v;
+});
+document.getElementById('payCvc').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,4);});
+function processPayment(){
+  const card=document.getElementById('payCard').value.replace(/\s/g,'');
+  const exp=document.getElementById('payExp').value.replace(/\s/g,'');
+  const cvc=document.getElementById('payCvc').value;
+  const email=document.getElementById('payEmail').value.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){toast('Enter a valid email');return;}
+  if(card.length<16){toast('Enter a 16-digit card number');return;}
+  if(!/^\d{2}\/\d{2}$/.test(exp)){toast('Enter expiry as MM / YY');return;}
+  if(cvc.length<3){toast('Enter the 3-digit CVC');return;}
+  const btn=document.getElementById('payBtn');
+  btn.disabled=true; btn.textContent='Processing…';
+  setTimeout(()=>{
+    // success state
+    if(currentUser){currentUser.plan=payPlan.plan;}
+    document.querySelector('#payModal .modal').innerHTML=`
+      <button class="mclose" onclick="closeCheckout()" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <div class="pay-success">
+        <div class="check"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="m20 6-11 11-5-5" stroke="#34e29b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>You're on ${payPlan.plan}!</h3>
+        <p>Your subscription is active. A receipt was sent to ${esc(email)}.</p>
+        <button class="btn btn-primary btn-block" style="margin-top:22px" onclick="closeCheckout()">Back to dashboard</button>
+      </div>`;
+    toast('Subscribed to '+payPlan.plan);
+  },1300);
 }
 </script>
 </body>
